@@ -20,31 +20,30 @@ public class Main {
         int a = input.nextInt();
         System.out.println("Podaj zmienną b=");
         int b = input.nextInt();
+        int wynik = 0;
 
         switch (symbol) {
             case "+":
-                int c = a + b;
-                System.out.println(a + symbol + b + "=" + c);
+                 wynik = a + b;
                 break;
 
             case "-":
-                int d = a - b;
-                System.out.println(a + symbol + b + "=" + d);
+                wynik = a - b;
                 break;
 
             case "*":
-                int e = a * b;
-                System.out.println(a + symbol + b + "=" + e);
+                wynik = a * b;
                 break;
 
             case "/":
-                int f = a / b;
-                System.out.println(a + symbol + b + "=" + f);
+                wynik = a / b;
                 break;
 
             default:
                 System.out.println("Ściemniasz");
         }
+
+        System.out.println(a + symbol + b + "=" + wynik);
 
         /*if (symbol.equals("+")) {
             int c = a + b;
