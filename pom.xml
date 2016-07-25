@@ -12,10 +12,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.spark.java</groupId>
-            <artifactId>spark.core</artifactId>
+            <groupId>com.sparkjava</groupId>
+            <artifactId>spark-core</artifactId>
             <version>2.5</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
