@@ -24,6 +24,7 @@ public class CalculatorWeb {
             return "<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     number1 +
                     number2 +
+                    result +
                     "</b></html>";
         });
         Spark.get("/contact", ((request, response) -> {
