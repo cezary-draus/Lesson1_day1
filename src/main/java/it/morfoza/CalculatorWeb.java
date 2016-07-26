@@ -16,6 +16,11 @@ public class CalculatorWeb {
         Spark.get("/calculator", (request, response) -> {
             String number1 = request.queryParams("number1");
             String number2 = request.queryParams("number2");
+
+            int number1a = Integer.parseInt(number1);
+            int number2a = Integer.parseInt(number2);
+            int result = number1a+number2a;
+
             return "<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     number1 +
                     number2 +
