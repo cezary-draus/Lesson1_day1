@@ -1,1 +1,1 @@
-web:java -jar terget/mcalc.jar
+web: java -jar terget/mcalc.jar
