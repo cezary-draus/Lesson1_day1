@@ -22,8 +22,11 @@ public class CalculatorWeb {
             int result = number1a + number2a;
 
             return "<html> <b>Elo, uczę się programować ;) Your numbers:" +
+                    " " +
                     number1 +
+                    ", " +
                     number2 +
+                    "Twój wynik dodawania to:" +
                     result +
                     "</b></html>";
         });
