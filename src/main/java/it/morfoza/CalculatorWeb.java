@@ -8,12 +8,14 @@ public class CalculatorWeb {
 
         String port = System.getenv("PORT");
 
-        if (port != null){
+        if (port != null) {
             int portInt = Integer.parseInt(port);
             Spark.port(portInt);
         }
 
-        Spark.get("/calculator", (request, response)-> {return "Siema";});
+        Spark.get("/calculator", (request, response) -> {
+            return "Siema";
+        });
         Spark.get("/contact", ((request, response) -> {
             return "<html>" +
                     "<form action=\"/calculator\">" +
