@@ -14,7 +14,7 @@ public class CalculatorWeb {
         }
 
         Spark.get("/calculator", (request, response) -> {
-            return "Siema";
+            return "Cześć Tomasz, I love you <3";
         });
         Spark.get("/contact", ((request, response) -> {
             return "<html>" +
