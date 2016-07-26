@@ -26,7 +26,7 @@ public class CalculatorWeb {
                     number1 +
                     ", " +
                     number2 +
-                    "Twój wynik dodawania to:" +
+                    "  Twój wynik dodawania to:" +
                     result +
                     "</b></html>";
         });
