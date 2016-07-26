@@ -1,7 +1,11 @@
 package it.morfoza;
 
 
+import spark.ModelAndView;
 import spark.Spark;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class CalculatorWeb {
     public static void main(String[] arg) {
@@ -21,14 +25,20 @@ public class CalculatorWeb {
             int number2a = Integer.parseInt(number2);
             int result = number1a + number2a;
 
-            return "<html> <b>Elo, uczę się programować ;) Your numbers:" +
+            Map<String, Object> model = new HashMap();
+            model.put("result", result);
+            model.put("number1",number1);
+            model.put("number2",number2);
+            return  new ModelAndView(model, "result.ftl");
+
+                    /*"<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     " " +
                     number1 +
                     ", " +
                     number2 +
                     "  Twój wynik dodawania to:" +
                     result +
-                    "</b></html>";
+                    "</b></html>";*/
         });
         Spark.get("/contact", ((request, response) -> {
             return "<html>" +
