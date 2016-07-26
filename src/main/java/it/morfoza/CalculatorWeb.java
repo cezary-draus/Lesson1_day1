@@ -3,6 +3,7 @@ package it.morfoza;
 
 import spark.ModelAndView;
 import spark.Spark;
+import spark.template.freemarker.FreeMarkerEngine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,7 @@ public class CalculatorWeb {
             model.put("number1",number1);
             model.put("number2",number2);
             return  new ModelAndView(model, "result.ftl");
+        }, new FreeMarkerEngine());
 
                     /*"<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     " " +
@@ -39,7 +41,7 @@ public class CalculatorWeb {
                     "  Twój wynik dodawania to:" +
                     result +
                     "</b></html>";*/
-        });
+
         Spark.get("/contact", ((request, response) -> {
             return "<html>" +
                     "<form action=\"/calculator\">" +
