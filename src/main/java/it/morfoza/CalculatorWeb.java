@@ -19,7 +19,7 @@ public class CalculatorWeb {
 
             int number1a = Integer.parseInt(number1);
             int number2a = Integer.parseInt(number2);
-            int result = number1a+number2a;
+            int result = number1a + number2a;
 
             return "<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     number1 +
