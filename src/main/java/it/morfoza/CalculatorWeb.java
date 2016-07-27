@@ -52,11 +52,12 @@ public class CalculatorWeb {
                     "</html>";
 
         }));
+Spark.staticFileLocation("/webfile");
 
-        Map<String, Object> model = new HashMap();
+       /* Map<String, Object> model = new HashMap();
         Spark.get("/user", (request, response) -> {
             return new ModelAndView(null, "user.ftl");
 
-        }, new FreeMarkerEngine());
+        }, new FreeMarkerEngine());*/
     }
 }
