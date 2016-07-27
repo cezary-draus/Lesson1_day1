@@ -52,7 +52,7 @@ public class CalculatorWeb {
                     "</html>";
 
         }));
-Spark.staticFileLocation("/webfile");
+Spark.staticFileLocation("/webfiles");
 
        /* Map<String, Object> model = new HashMap();
         Spark.get("/user", (request, response) -> {
