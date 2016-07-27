@@ -17,7 +17,7 @@ public class CalculatorWeb {
             int portInt = Integer.parseInt(port);
             Spark.port(portInt);
         }
-
+        Spark.staticFileLocation("/webfiles");
         Spark.get("/calculator", (request, response) -> {
             String number1 = request.queryParams("number1");
             String number2 = request.queryParams("number2");
@@ -52,7 +52,7 @@ public class CalculatorWeb {
                     "</html>";
 
         }));
-Spark.staticFileLocation("/webfiles");
+
 
        /* Map<String, Object> model = new HashMap();
         Spark.get("/user", (request, response) -> {
