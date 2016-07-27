@@ -54,8 +54,8 @@ public class CalculatorWeb {
         }));
 
         Map<String, Object> model = new HashMap();
-        Spark.get("/uczestnik", (request, response) -> {
-            return new ModelAndView(model, "uczestnik.ftl");
+        Spark.get("/user", (request, response) -> {
+            return new ModelAndView(model, "user.ftl");
 
         }, new FreeMarkerEngine());
     }
