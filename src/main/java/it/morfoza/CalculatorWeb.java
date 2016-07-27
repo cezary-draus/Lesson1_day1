@@ -17,7 +17,19 @@ public class CalculatorWeb {
             int portInt = Integer.parseInt(port);
             Spark.port(portInt);
         }
-        Spark.staticFileLocation("/webfiles");
+Spark.staticFileLocation("/webfiles");
+        Spark.get("/user2", (request, response) -> {
+            String name = request.queryParams("name");
+            String phonenumber = request.queryParams("phonenumber");
+
+
+            Map<String, Object> model = new HashMap();
+            model.put("name", name);
+            model.put("phonenumber",phonenumber);
+            return  new ModelAndView(model, "userresult.ftl");
+        }, new FreeMarkerEngine());
+
+
         Spark.get("/calculator", (request, response) -> {
             String number1 = request.queryParams("number1");
             String number2 = request.queryParams("number2");
@@ -44,7 +56,7 @@ public class CalculatorWeb {
 
         Spark.get("/contact", ((request, response) -> {
             return "<html>" +
-                    "<form action=\"/calculator\">" +
+                    "<form action=\"calculator\">" +
                     "<input name=\"number1\">" +
                     "<input name=\"number2\">" +
                     "<input type=\"submit\">" +
@@ -54,10 +66,10 @@ public class CalculatorWeb {
         }));
 
 
-       /* Map<String, Object> model = new HashMap();
+        /*Map<String, Object> model = new HashMap();
         Spark.get("/user", (request, response) -> {
-            return new ModelAndView(null, "user.ftl");
+            return new ModelAndView(null, "user.ftl");*/
 
-        }, new FreeMarkerEngine());*/
+      /*  }, new FreeMarkerEngine());*/
     }
 }
