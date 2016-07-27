@@ -52,5 +52,11 @@ public class CalculatorWeb {
                     "</html>";
 
         }));
+
+        Map<String, Object> model = new HashMap();
+        Spark.get("/uczestnik", (request, response) -> {
+            return new ModelAndView(model, "uczestnik.ftl");
+
+        }, new FreeMarkerEngine());
     }
 }
