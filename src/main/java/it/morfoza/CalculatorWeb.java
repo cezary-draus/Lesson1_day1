@@ -8,6 +8,8 @@ import spark.template.freemarker.FreeMarkerEngine;
 import java.util.HashMap;
 import java.util.Map;
 
+import static it.morfoza.Calculator.sume;
+
 public class CalculatorWeb {
     public static void main(String[] arg) {
 
@@ -17,6 +19,7 @@ public class CalculatorWeb {
             int portInt = Integer.parseInt(port);
             Spark.port(portInt);
         }
+        /*Spark.port(1025*/
 Spark.staticFileLocation("/webfiles");
         Spark.get("/user2", (request, response) -> {
             String name = request.queryParams("name");
@@ -33,15 +36,26 @@ Spark.staticFileLocation("/webfiles");
         Spark.get("/calculator", (request, response) -> {
             String number1 = request.queryParams("number1");
             String number2 = request.queryParams("number2");
-
+            String operation = request.queryParams("operation");
             int number1a = Integer.parseInt(number1);
             int number2a = Integer.parseInt(number2);
-            int result = number1a + number2a;
+int result;
+
+            if (operation.equals("+")){
+                result = Calculator.sume(number1a,number2a);
+
+            } else {
+                 result = Calculator.minus(number1a,number2a);
+
+            }
+
+
 
             Map<String, Object> model = new HashMap();
             model.put("result", result);
             model.put("number1",number1);
             model.put("number2",number2);
+            model.put("operation",operation);
             return  new ModelAndView(model, "result.ftl");
         }, new FreeMarkerEngine());
 
@@ -54,16 +68,6 @@ Spark.staticFileLocation("/webfiles");
                     result +
                     "</b></html>";*/
 
-        Spark.get("/contact", ((request, response) -> {
-            return "<html>" +
-                    "<form action=\"calculator\">" +
-                    "<input name=\"number1\">" +
-                    "<input name=\"number2\">" +
-                    "<input type=\"submit\">" +
-                    "</form>" +
-                    "</html>";
-
-        }));
 
 
         /*Map<String, Object> model = new HashMap();
