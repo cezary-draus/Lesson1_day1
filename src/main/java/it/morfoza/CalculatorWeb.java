@@ -8,8 +8,6 @@ import spark.template.freemarker.FreeMarkerEngine;
 import java.util.HashMap;
 import java.util.Map;
 
-import static it.morfoza.Calculator.sume;
-
 public class CalculatorWeb {
     public static void main(String[] arg) {
 
@@ -58,10 +56,15 @@ public class CalculatorWeb {
             return new ModelAndView(model, "result.ftl");
         }, new FreeMarkerEngine());
 
+String name = "Michalina";
 
         Spark.get("/spark", (request, response) -> {
-            return "Hello Spark";
+            Map<String, String> mod=new HashMap();
+            mod.put("name", name);
+            return "Hello " + name ;
         });
+
+
 
                     /*"<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     " " +
