@@ -4,9 +4,9 @@ package it.morfoza;
 
 import java.util.Scanner;
 
-public class Main {
+public class CalculatorConsol {
 
-    public static void main(String[] args) {
+    public static void runOnConsol (String[] args) {
         //System.out.println("Hello! What's your name?");
 
         Scanner input = new Scanner(System.in);

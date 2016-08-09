@@ -8,8 +8,8 @@ import spark.template.freemarker.FreeMarkerEngine;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CalculatorWeb {
-    public static void main(String[] arg) {
+public class CalculatorSpark {
+    public static void runOnSpark (String[] arg) {
 
         String port = System.getenv("PORT");
 
