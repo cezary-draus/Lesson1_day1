@@ -1,1 +1,1 @@
-web: java -jar target/mcalc.jar
+web: java -jar target/michalinab.calculator-1.0-SNAPSHOT.jar
