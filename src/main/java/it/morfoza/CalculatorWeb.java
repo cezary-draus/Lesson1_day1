@@ -20,7 +20,7 @@ public class CalculatorWeb {
             Spark.port(portInt);
         }
         /*Spark.port(1025*/
-Spark.staticFileLocation("/webfiles");
+        Spark.staticFileLocation("/webfiles");
         Spark.get("/user2", (request, response) -> {
             String name = request.queryParams("name");
             String phonenumber = request.queryParams("phonenumber");
@@ -28,8 +28,8 @@ Spark.staticFileLocation("/webfiles");
 
             Map<String, Object> model = new HashMap();
             model.put("name", name);
-            model.put("phonenumber",phonenumber);
-            return  new ModelAndView(model, "userresult.ftl");
+            model.put("phonenumber", phonenumber);
+            return new ModelAndView(model, "userresult.ftl");
         }, new FreeMarkerEngine());
 
 
@@ -39,25 +39,29 @@ Spark.staticFileLocation("/webfiles");
             String operation = request.queryParams("operation");
             int number1a = Integer.parseInt(number1);
             int number2a = Integer.parseInt(number2);
-int result;
+            int result;
 
-            if (operation.equals("+")){
-                result = Calculator.sume(number1a,number2a);
+            if (operation.equals("+")) {
+                result = Calculator.sume(number1a, number2a);
 
             } else {
-                 result = Calculator.minus(number1a,number2a);
+                result = Calculator.minus(number1a, number2a);
 
             }
 
 
-
             Map<String, Object> model = new HashMap();
             model.put("result", result);
-            model.put("number1",number1);
-            model.put("number2",number2);
-            model.put("operation",operation);
-            return  new ModelAndView(model, "result.ftl");
+            model.put("number1", number1);
+            model.put("number2", number2);
+            model.put("operation", operation);
+            return new ModelAndView(model, "result.ftl");
         }, new FreeMarkerEngine());
+
+
+        Spark.get("/spark", (request, response) -> {
+            return "Hello Spark";
+        });
 
                     /*"<html> <b>Elo, uczę się programować ;) Your numbers:" +
                     " " +
