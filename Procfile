@@ -1,1 +1,1 @@
-web: java -jar target/michalinab.calculator-1.0-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/michalinab.calculator-1.0-SNAPSHOT.jar
